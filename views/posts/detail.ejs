@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+    <title><%= currentPost.title %> </title>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="/posts" class="brand">Postland</a>
+                <p>The internet's best source of posts</p>
+            </div>
+        </nav>
+        <h1><%=currentPost.title %></h1>
+        <h3>Written by: <%=currentPost.username%></h3>
+        <p><%=currentPost.post%></p>
+        <a href="/posts/<%= currentPost.id %>/edit" class="button">Update this post</a>
+        <hr>
+        <form method="POST" action="/posts/<%= currentPost.id %>?_method=DELETE" display="inline">
+            <button>Delete this post!</button>
+        </form>
+    </div>
+
+</body>
+</html>

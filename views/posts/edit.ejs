@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+    <title>Editing Post</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="/posts" class="brand">Postland</a>
+                <p>The internet's best source of posts</p>
+            </div>
+        </nav>
+        <h1>Update This post</h1>
+        <form method="POST" action="/posts/<%= currentPost.id %>?_method=PATCH" >
+            <label for="title">Post Title:</label>
+            <input type="text" name="title" id="title" value="<%= currentPost.title %>">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" value="<%= currentPost.username %>">
+            <label for="post">Update your post here!</label>
+            <textarea name="post" id="post">
+                <%= currentPost.post %> 
+            </textarea>
+            <br>
+            <button type="submit">Update!</button>
+        </form>
+    </div>
+</body>
+</html>

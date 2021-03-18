@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+    <title>Postland</title>
+</head>
+<body>
+    <div class="container">
+    <nav class="nav">
+        <div class="nav-left">
+            <a href="/posts" class="brand">Postland</a>
+            <p>The internet's best source of posts</p>
+        </div>
+    </nav>
+        <div class="row">
+        <%for(let p of posts){%>
+            <div class="card col-6-md col-4-lg">
+                <header>
+                    <h3><%=p.title %></h3>
+                    <h5>By <%= p.username %></h5>
+                </header>
+                <p><%= p.post %> </p>
+                <footer class="is-right">
+                    <a href="/posts/<%=p.id%>" class="button">Go to post</a>
+                </footer>
+            </div>
+            <br>
+        <%}%>
+    </div>
+    <a href="/posts/new" class="button">Make A New Post</a>
+</div>
+</body>
+</html>
